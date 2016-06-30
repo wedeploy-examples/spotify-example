@@ -112,27 +112,67 @@ var tracks = [
 // Audio
 
 var isPlaying = false;
+var trackIndex = 0;
 
 var audio = document.querySelector('audio');
 
-audio.src = tracks[0].url;
+audio.src = tracks[trackIndex].url;
 
-// Play
+// Play / Pause
 
 var playBtn = document.querySelector('.play');
 
 playBtn.addEventListener('click', function() {
   if (isPlaying) {
-    audio.pause();
-    isPlaying = false;
-
-    playBtn.classList.add('ion-ios-play');
-    playBtn.classList.remove('ion-ios-pause');
+    pause();
   } else {
-    audio.play();
-    isPlaying = true;
-
-    playBtn.classList.add('ion-ios-pause');
-    playBtn.classList.remove('ion-ios-play');
+    play();
   }
+});
+
+function pause() {
+  audio.pause();
+  isPlaying = false;
+
+  playBtn.classList.add('ion-ios-play');
+  playBtn.classList.remove('ion-ios-pause');
+}
+
+function play() {
+  audio.play();
+  isPlaying = true;
+
+  playBtn.classList.add('ion-ios-pause');
+  playBtn.classList.remove('ion-ios-play');
+}
+
+// Skip Tracks
+
+var backward = document.querySelector('.backward');
+var forward = document.querySelector('.forward');
+
+backward.addEventListener('click', function() {
+  if (trackIndex === 0) {
+    trackIndex = tracks.length;
+  }
+
+  trackIndex--;
+
+  audio.pause();
+  audio.src = tracks[trackIndex].url;
+
+  play();
+});
+
+forward.addEventListener('click', function() {
+  if (trackIndex === tracks.length -1) {
+    trackIndex = 0;
+  }
+
+  trackIndex++;
+
+  audio.pause();
+  audio.src = tracks[trackIndex].url;
+
+  play();
 });
