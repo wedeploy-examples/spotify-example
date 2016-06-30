@@ -109,7 +109,6 @@ var tracks = [
 
 // Audio
 
-var isPlaying = false;
 var trackIndex = 0;
 
 var audio = document.querySelector('audio');
@@ -122,27 +121,25 @@ audio.load();
 var playBtn = document.querySelector('.play');
 
 playBtn.addEventListener('click', function() {
-  if (isPlaying) {
-    pause();
-  } else {
+  if (audio.paused) {
     play();
+  } else {
+    pause();
   }
 });
 
-function pause() {
-  audio.pause();
-  isPlaying = false;
-
-  playBtn.classList.add('ion-ios-play');
-  playBtn.classList.remove('ion-ios-pause');
-}
-
 function play() {
   audio.play();
-  isPlaying = true;
 
   playBtn.classList.add('ion-ios-pause');
   playBtn.classList.remove('ion-ios-play');
+}
+
+function pause() {
+  audio.pause();
+
+  playBtn.classList.add('ion-ios-play');
+  playBtn.classList.remove('ion-ios-pause');
 }
 
 // Skip Tracks
