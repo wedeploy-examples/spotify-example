@@ -1,6 +1,10 @@
 body {
   background: #181818;
   font-family: 'Roboto', sans-serif;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 body a {
   color: #aaaaaa;
