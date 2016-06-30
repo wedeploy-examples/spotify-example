@@ -69,43 +69,7 @@ $(window).on('resize load', function(){
 
 // Tracks
 
-var tracks = [
-  {
-    artist: 'Awolnation',
-    song: 'Sail',
-    url: 'musics/sail.mp3'
-  },
-  {
-    artist: 'Bastille',
-    song: 'Pompeii',
-    url: 'musics/pompeii.mp3'
-  },
-  {
-    artist: 'Deadmau5',
-    song: 'Ghosts n\' Stuff',
-    url: 'musics/ghosts_n_stuff.mp3'
-  },
-  {
-    artist: 'Foster The People',
-    song: 'Pumped Up Kicks',
-    url: 'musics/pumped_up_kicks.mp3'
-  },
-  {
-    artist: 'Ghost Town',
-    song: 'You\'re So Creepy',
-    url: 'musics/youre_so_creepy.mp3'
-  },
-  {
-    artist: 'Klaypex',
-    song: 'Gamefire',
-    url: 'musics/gamefire.mp3'
-  },
-  {
-    artist: 'The Glitch Mob',
-    song: 'Seven Nation Army',
-    url: 'musics/seven_nation_army.mp3'
-  }
-];
+var tracks = document.querySelectorAll('[data-url]');
 
 // Audio
 
@@ -113,7 +77,7 @@ var trackIndex = 0;
 
 var audio = document.querySelector('audio');
 
-audio.src = tracks[trackIndex].url;
+audio.src = tracks[trackIndex].dataset.url;
 audio.load();
 
 // Play / Pause
@@ -142,6 +106,25 @@ function pause() {
   playBtn.classList.remove('ion-ios-pause');
 }
 
+// Click Track
+
+for (var i = 0; i < tracks.length; i++) {
+  (function(j) {
+    tracks[j].addEventListener('dblclick', function() {
+      playTrack(j);
+    });
+  })(i);
+}
+
+function playTrack(index) {
+  trackIndex = index;
+
+  audio.pause();
+  audio.src = tracks[trackIndex].dataset.url;
+
+  play();
+}
+
 // Skip Tracks
 
 var backward = document.querySelector('.backward');
@@ -155,7 +138,7 @@ backward.addEventListener('click', function() {
   trackIndex--;
 
   audio.pause();
-  audio.src = tracks[trackIndex].url;
+  audio.src = tracks[trackIndex].dataset.url;
 
   play();
 });
@@ -168,7 +151,7 @@ forward.addEventListener('click', function() {
   trackIndex++;
 
   audio.pause();
-  audio.src = tracks[trackIndex].url;
+  audio.src = tracks[trackIndex].dataset.url;
 
   play();
 });
