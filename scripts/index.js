@@ -68,3 +68,71 @@ $(window).on("resize load", function(){
     $(".collapse").addClass("in");
 	}
 });
+
+// Tracks
+
+var tracks = [
+  {
+    artist: "Awolnation",
+    song: "Sail",
+    url: "musics/sail.mp3"
+  },
+  {
+    artist: "Bastille",
+    song: "Pompeii",
+    url: "musics/pompeii.mp3"
+  },
+  {
+    artist: "Deadmau5",
+    song: "Ghosts n' Stuff",
+    url: "musics/ghosts_n_stuff.mp3"
+  },
+  {
+    artist: "Foster The People",
+    song: "Pumped Up Kicks",
+    url: "musics/pumped_up_kicks.mp3"
+  },
+  {
+    artist: "Ghost Town",
+    song: "You're So Creepy",
+    url: "musics/youre_so_creepy.mp3"
+  },
+  {
+    artist: "Klaypex",
+    song: "Gamefire",
+    url: "musics/gamefire.mp3"
+  },
+  {
+    artist: "The Glitch Mob",
+    song: "Seven Nation Army",
+    url: "musics/seven_nation_army.mp3"
+  }
+];
+
+// Audio
+
+var isPlaying = false;
+
+var audio = document.querySelector('audio');
+
+audio.src = tracks[0].url;
+
+// Play
+
+var playBtn = document.querySelector('.play');
+
+playBtn.addEventListener('click', function() {
+  if (isPlaying) {
+    audio.pause();
+    isPlaying = false;
+
+    playBtn.classList.add('ion-ios-play');
+    playBtn.classList.remove('ion-ios-pause');
+  } else {
+    audio.play();
+    isPlaying = true;
+
+    playBtn.classList.add('ion-ios-pause');
+    playBtn.classList.remove('ion-ios-play');
+  }
+});
