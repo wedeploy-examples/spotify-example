@@ -39,8 +39,6 @@ $(window).on("resize load", function(){
   var navHeight = totalHeight - (headerHeight + footerHeight + playlistHeight + nowPlaying);
   var artistHeight = totalHeight - (headerHeight + footerHeight);
 
-  console.log(totalHeight);
-
   $(".navigation").css("height" , navHeight);
   $(".artist").css("height" , artistHeight);
   $(".social").css("height" , artistHeight);
@@ -117,6 +115,7 @@ var trackIndex = 0;
 var audio = document.querySelector('audio');
 
 audio.src = tracks[trackIndex].url;
+audio.load();
 
 // Play / Pause
 
@@ -176,3 +175,33 @@ forward.addEventListener('click', function() {
 
   play();
 });
+
+// Duration
+
+var duration = document.querySelector('.duration');
+
+audio.addEventListener('durationchange', function(e) {
+  duration.innerHTML = formatTime(e.target.duration);
+});
+
+// Current Time
+
+var currentTime = document.querySelector('.current-time');
+
+setInterval(function() {
+  currentTime.innerHTML = formatTime(audio.currentTime);
+}, 1000);
+
+// Format Time
+
+function formatTime(seconds) {
+    seconds = Math.floor(seconds);
+
+    minutes = Math.floor(seconds / 60);
+    minutes = (minutes >= 10) ? minutes : "0" + minutes;
+
+    seconds = Math.floor(seconds % 60);
+    seconds = (seconds >= 10) ? seconds : "0" + seconds;
+
+    return minutes + ":" + seconds;
+}
