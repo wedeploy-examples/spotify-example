@@ -1,14 +1,6 @@
 // Sliders
 
-var slider = document.getElementById('song-progress');
 
-noUiSlider.create(slider, {
-  start: [ 20 ],
-  range: {
-    min: [ 0 ],
-    max: [ 100 ]
-  }
-});
 
 var volume = document.getElementById('song-volume');
 
@@ -181,7 +173,21 @@ forward.addEventListener('click', function() {
 
 var duration = document.querySelector('.duration');
 
+var progress = document.querySelector('#song-progress');
+
 audio.addEventListener('durationchange', function(e) {
+  if (progress.noUiSlider) {
+    progress.noUiSlider.destroy();
+  }
+
+  noUiSlider.create(progress, {
+    start: [ 0 ],
+    range: {
+      min: [ 0 ],
+      max: [ e.target.duration ]
+    }
+  });
+
   duration.innerHTML = formatTime(e.target.duration);
 });
 
@@ -189,9 +195,10 @@ audio.addEventListener('durationchange', function(e) {
 
 var currentTime = document.querySelector('.current-time');
 
-setInterval(function() {
+audio.addEventListener('timeupdate', function(e) {
   currentTime.innerHTML = formatTime(audio.currentTime);
-}, 1000);
+  progress.noUiSlider.set(audio.currentTime);
+});
 
 // Format Time
 
