@@ -114,21 +114,36 @@ function pause() {
 
 // Click Track
 
+var playingSongName = document.querySelector('.playing__song__name');
+var playingArtImage = document.querySelector('.playing__art img');
+
 for (var i = 0; i < tracks.length; i++) {
   (function(j) {
-    tracks[j].addEventListener('dblclick', function() {
-      playTrack(j);
+    tracks[j].addEventListener('dblclick', function(e) {
+      playTrack(e.target, j);
+      updateTrackMetadata(e.target);
     });
   })(i);
 }
 
-function playTrack(index) {
+function playTrack(target, index) {
   trackIndex = index;
 
   audio.pause();
   audio.src = tracks[trackIndex].dataset.url;
 
   play();
+}
+
+function updateTrackMetadata(target) {
+  var trackTitle = target.querySelector('.title').innerHTML;
+  var trackImage = target.querySelector('.track__art img');
+
+  playingSongName.innerHTML = trackTitle;
+
+  if (trackImage) {
+    playingArtImage.src = trackImage.src;
+  }
 }
 
 // Skip Tracks
