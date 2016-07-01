@@ -10,13 +10,19 @@ noUiSlider.create(slider, {
   }
 });
 
-var slider = document.getElementById('song-volume');
+var volume = document.getElementById('song-volume');
 
-noUiSlider.create(slider, {
-  start: [ 90 ],
+noUiSlider.create(volume, {
+  start: [ 1 ],
   range: {
     min: [ 0 ],
-    max: [ 100 ]
+    max: [ 1 ]
+  }
+});
+
+volume.noUiSlider.on('update', function(values) {
+  if (audio) {
+    audio.volume = values[0];
   }
 });
 
