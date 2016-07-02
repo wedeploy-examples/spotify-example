@@ -188,6 +188,22 @@ audio.addEventListener('durationchange', function(e) {
     }
   });
 
+  progress.noUiSlider.on('start', function(e) {
+    audio.removeEventListener('timeupdate', update);
+  });
+
+  progress.noUiSlider.on('end', function(e) {
+    audio.addEventListener('timeupdate', update);
+  });
+
+  progress.noUiSlider.on('slide', function(e) {
+    currentTime.innerHTML = formatTime(e);
+  });
+
+  progress.noUiSlider.on('change', function(e) {
+    audio.currentTime = e;
+  });
+
   duration.innerHTML = formatTime(e.target.duration);
 });
 
@@ -195,10 +211,12 @@ audio.addEventListener('durationchange', function(e) {
 
 var currentTime = document.querySelector('.current-time');
 
-audio.addEventListener('timeupdate', function(e) {
-  currentTime.innerHTML = formatTime(audio.currentTime);
-  progress.noUiSlider.set(audio.currentTime);
-});
+audio.addEventListener('timeupdate', update);
+
+function update(e) {
+  currentTime.innerHTML = formatTime(e.target.currentTime);
+  progress.noUiSlider.set(e.target.currentTime);
+}
 
 // Format Time
 

@@ -301,15 +301,23 @@ body a:hover {
   justify-content: space-between;
   align-items: center;
 }
+.current-track__progress__start {
+  margin-right: 15px;
+}
+.current-track__progress__finish {
+  margin-left: 15px;
+}
 .current-track__progress__bar {
   width: 100%;
-  padding: 0 15px;
 }
 .current-track__progress__bar .noUi-target {
   border: none;
-  height: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 5px;
 }
 .current-track__progress__bar .noUi-base {
+  border-radius: 4px;
   background: #1ed760;
 }
 .current-track__progress__bar .noUi-origin {
@@ -317,13 +325,15 @@ body a:hover {
 }
 .current-track__progress__bar .noUi-handle {
   background: #c8c8c8;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   box-shadow: none;
   border: none;
-  left: 0;
   display: none;
+  cursor: move;
+  margin-left: -9px;
+  left: 0;
 }
 .current-track__progress__bar .noUi-handle:before, .current-track__progress__bar .noUi-handle:after {
   background: none;
@@ -372,7 +382,7 @@ body a:hover {
 .current-track__options .controls .volume #song-volume {
   width: calc(80% - 20px);
   border: none;
-  height: 4px;
+  height: 5px;
 }
 .current-track__options .controls .volume #song-volume .noUi-base {
   background: #c8c8c8;
