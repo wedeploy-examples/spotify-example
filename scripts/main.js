@@ -1,7 +1,5 @@
 // Sliders
 
-
-
 var volume = document.getElementById('song-volume');
 
 noUiSlider.create(volume, {
@@ -80,18 +78,24 @@ audio.load();
 
 // Play / Pause
 
+var mainPlay = document.querySelector('.main-play');
 var playBtn = document.querySelector('.play');
 
-playBtn.addEventListener('click', function() {
+mainPlay.addEventListener('click', togglePlay);
+playBtn.addEventListener('click', togglePlay);
+
+function togglePlay() {
   if (audio.paused) {
     play();
   } else {
     pause();
   }
-});
+}
 
 function play() {
   audio.play();
+
+  mainPlay.textContent = 'Pause';
 
   playBtn.classList.add('ion-ios-pause');
   playBtn.classList.remove('ion-ios-play');
@@ -99,6 +103,8 @@ function play() {
 
 function pause() {
   audio.pause();
+
+  mainPlay.textContent = 'Play';
 
   playBtn.classList.add('ion-ios-play');
   playBtn.classList.remove('ion-ios-pause');
