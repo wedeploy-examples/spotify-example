@@ -134,7 +134,11 @@ body a:hover {
   }
 }
 @media (max-width:768px) {
+  .header {
+    display: none;
+  }
   .content__left {
+    display: none;
     width: 100%;
   }
   .content__middle {
@@ -181,6 +185,7 @@ body a:hover {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    overflow-y: auto;
   }
   .navigation__list {
     margin-bottom: 0;
@@ -272,6 +277,10 @@ body a:hover {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
 }
 .current-track__actions {
   width: 5%;
@@ -429,6 +438,9 @@ body a:hover {
   }
 }
 @media (max-width:768px) {
+  .current-track {
+    border-top: 1px solid #5e5e5e;
+  }
   .current-track__actions {
     width: 25%;
   }
@@ -685,13 +697,20 @@ body a:hover {
   }
 }
 @media (max-width:768px) {
+  .artist__header .artist__navigation {
+    display: none;
+  }
+  .artist__content .overview__related {
+    display: none;
+  }
   .artist__content .overview__artist {
     padding-right: 0;
   }
-}
-@media (max-width:768px) {
   .artist {
     overflow-y: auto;
+  }
+  .show-more {
+    display: none;
   }
 }
 @media (max-width:522px) {
@@ -877,9 +896,27 @@ body a:hover {
   }
 }
 @media (max-width:768px) {
+  .tracks:last-child {
+    margin-bottom: 115px;
+  }
+  .tracks .tracks__heading__number {
+    margin-left: 0;
+  }
+  .tracks .track__added {
+    display: none;
+  }
+  .tracks .track__number {
+    margin-left: 0px;
+  }
+  .tracks .track__title {
+    margin-left: 15px;
+  }
   .related-artists .related-artist {
     margin: 5px;
     width: calc((100% / 2) - 10px);
+  }
+  .tracks .track__art {
+    display: none;
   }
 }
 @media (max-width:480px) {
@@ -981,7 +1018,6 @@ body a:hover {
 .social {
   padding: 15px;
   text-align: center;
-  overflow-y: scroll;
 }
 .social .friends {
   display: flex;
@@ -1148,4 +1184,12 @@ button:hover {
   letter-spacing: 1.25px;
   font-size: 13.2px;
   margin-bottom: 10px;
+}
+@media (max-width:768px) {
+  .section-title:first-child {
+    display: none;
+  }
+  .artist__content .overview__artist .latest-release {
+    display: none;
+  }
 }
