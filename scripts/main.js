@@ -3,6 +3,7 @@
 var volume = document.getElementById('song-volume');
 
 noUiSlider.create(volume, {
+  animate: false,
   start: [ 1 ],
   range: {
     min: [ 0 ],
@@ -117,7 +118,7 @@ var playingArtImage = document.querySelector('.playing__art img');
 
 for (var i = 0; i < tracks.length; i++) {
   (function(j) {
-    tracks[j].addEventListener('dblclick', function(e) {
+    tracks[j].addEventListener('click', function(e) {
       playTrack(e.target, j);
       updateTrackMetadata(e.target);
     });
@@ -181,14 +182,13 @@ var duration = document.querySelector('.duration');
 
 var progress = document.querySelector('#song-progress');
 
-var enteredProgressSlider = false;
-
 audio.addEventListener('durationchange', function(e) {
   if (progress.noUiSlider) {
     progress.noUiSlider.destroy();
   }
 
   noUiSlider.create(progress, {
+    animate: false,
     start: [ 0 ],
     range: {
       min: [ 0 ],
@@ -212,14 +212,6 @@ audio.addEventListener('durationchange', function(e) {
     audio.currentTime = e;
   });
 
-  progress.addEventListener('mouseenter', function(e) {
-    enteredProgressSlider = true;
-  });
-
-  progress.addEventListener('mouseleave', function(e) {
-    enteredProgressSlider = false;
-  });
-
   duration.innerHTML = formatTime(e.target.duration);
 });
 
@@ -231,10 +223,7 @@ audio.addEventListener('timeupdate', update);
 
 function update() {
   currentTime.innerHTML = formatTime(audio.currentTime);
-
-  if (!enteredProgressSlider) {
-    progress.noUiSlider.set(audio.currentTime);
-  }
+  progress.noUiSlider.set(audio.currentTime);
 }
 
 // Format Time

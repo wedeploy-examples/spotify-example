@@ -1083,6 +1083,9 @@ body a:hover {
   }
 }
 @media (max-width:768px) {
+  .overview__albums__head {
+    display: none;
+  }
   .media-cards .media-card {
     width: calc((100% / 2) - 30px);
   }
