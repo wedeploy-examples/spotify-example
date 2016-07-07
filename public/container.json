@@ -1,0 +1,8 @@
+{
+	"id": "public",
+	"type": "wedeploy/engine",
+	"env": {
+		"WEDEPLOY_WEB_PATH": "/",
+		"WEDEPLOY_API_PATH": "/"
+	}
+}

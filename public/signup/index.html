@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign Up - Spotify</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/assets/vendor/styles/spotify.min.css">
+	<link rel="stylesheet" href="/assets/styles/auth.css">
+</head>
+<body>
+	<div class="container">
+		<a class="navbar-brand" href="/">
+			<span class="navbar-logo">Spotify</span>
+		</a>
+		<div class="content">
+			<h3 class="text-center">Sign up using your email</h3>
+			<form method="post" action="http://users.spotify.wedeploy.local/data" enctype="multipart/form-data">
+				<div class="form-group">
+					<input name="email" type="email" class="form-control" placeholder="Email address">
+				</div>
+				<div class="form-group">
+					<input name="password" type="password" class="form-control" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-sm btn-primary" value="Sign Up">
+				</div>
+			</form>
+			<p class="text-center">Already have an account? <a href="/login">Log in</a></p>
+		</div>
+	</div>
+</body>
+</html>

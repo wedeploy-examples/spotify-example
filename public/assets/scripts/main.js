@@ -1,3 +1,10 @@
+// Launchpad
+//   .url('/login')
+//   .post({
+//     email: "a@a.com",
+//     password: "a"
+//   });
+
 // Sliders
 
 var volume = document.getElementById('song-volume');

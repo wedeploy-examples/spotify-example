@@ -1,0 +1,14 @@
+[
+	{
+		"path": "/",
+		"auth": {
+			"validator": "$auth != null"
+		}
+	},
+	{
+		"path": "/index.html",
+		"auth": {
+			"validator": "$auth != null"
+		}
+	}
+]

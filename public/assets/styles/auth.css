@@ -1,0 +1,23 @@
+body {
+	background: rgb(24, 24, 24);
+}
+h3 {
+	margin-bottom: 20px;
+}
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	max-width: 450px;
+	flex-direction: column;
+}
+.content {
+	background: white;
+	padding: 20px;
+	margin: 20px auto;
+}
+.btn-primary {
+	display: block;
+	margin: 0 auto 30px;
+}

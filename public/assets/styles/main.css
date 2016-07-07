@@ -74,7 +74,7 @@ body a:hover {
 }
 .header .user__actions .dropdown-menu {
   background: #282828;
-  margin-top: 25px;
+  margin-top: 10px;
   border-radius: 2px;
   padding: 0;
   border: none;
@@ -88,11 +88,12 @@ body a:hover {
   color: #282828;
   font-size: 36px;
 }
-.header .user__actions .dropdown-menu a {
+.header .user__actions .dropdown-menu button {
   color: #aaaaaa;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
-.header .user__actions .dropdown-menu a:hover {
+.header .user__actions .dropdown-menu button:hover {
   background: none;
   transition: all 0.2s ease;
 }
@@ -105,7 +106,7 @@ body a:hover {
   background: #aaaaaa;
   transition: all 0.2s ease;
 }
-.header .user__actions .dropdown-menu li:hover a {
+.header .user__actions .dropdown-menu li:hover button {
   color: #c8c8c8;
   transition: all 0.2s ease;
 }
@@ -1195,4 +1196,8 @@ button:hover {
   .artist__content .overview__artist .latest-release {
     display: none;
   }
+}
+
+.dropdown-toggle {
+  padding: 0;
 }

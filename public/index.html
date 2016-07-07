@@ -8,11 +8,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
-    <link rel="stylesheet" href="vendor/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/styles/font-awesome.min.css">
-    <link rel="stylesheet" href="vendor/styles/ionicons.min.css">
-    <link rel="stylesheet" href="vendor/styles/nouislider.min.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="assets/vendor/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendor/styles/ionicons.min.css">
+    <link rel="stylesheet" href="assets/vendor/styles/nouislider.min.css">
+    <link rel="stylesheet" href="assets/styles/main.css">
 </head>
 <body>
     <section class="header">
@@ -36,7 +36,7 @@
             </div>
             <div class="user__info">
                 <span class="user__info__img">
-                <img src="images/adam_proPic.jpg" alt="Profile Picture" class="img-responsive">
+                <img src="assets/images/adam_proPic.jpg" alt="Profile Picture" class="img-responsive">
                 </span>
                 <span class="user__info__name">
                 <span class="first">Adam</span>
@@ -49,10 +49,11 @@
                     <i class="ion-chevron-down"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                        <li><a>Private Session</a></li>
-                        <li><a>Account</a></li>
-                        <li><a>Settings</a></li>
-                        <li><a>Log Out</a></li>
+                        <li>
+                            <form method="post" action="/logout">
+                                <button type="submit">Log Out</button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -188,7 +189,7 @@
             </section>
             <section class="playing">
                 <div class="playing__art">
-                    <img src="images/cputh.jpg" alt="Album Art">
+                    <img src="assets/images/cputh.jpg" alt="Album Art">
                 </div>
                 <div class="playing__song">
                     <a class="playing__song__name">Some Type of Love</a>
@@ -204,7 +205,7 @@
                 <div class="artist__header">
                     <div class="artist__info">
                         <div class="profile__img">
-                            <img src="images/g_eazy_propic.jpg" alt="G-Eazy">
+                            <img src="assets/images/g_eazy_propic.jpg" alt="G-Eazy">
                         </div>
                         <div class="artist__info__meta">
                             <div class="artist__info__type">Artist</div>
@@ -238,13 +239,13 @@
                         </ul>
                         <div class="artist__navigation__friends">
                             <a>
-                                <img src="images/17.jpg" alt="">
+                                <img src="assets/images/17.jpg" alt="">
                             </a>
                             <a>
-                                <img src="images/5.png" alt="">
+                                <img src="assets/images/5.png" alt="">
                             </a>
                             <a>
-                                <img src="images/17.jpg" alt="">
+                                <img src="assets/images/17.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -259,7 +260,7 @@
                                     <div class="section-title">Latest Release</div>
                                     <div class="latest-release">
                                         <div class="latest-release__art">
-                                            <img src="images/whenDarkOut.jpg" alt="When It's Dark Out">
+                                            <img src="assets/images/whenDarkOut.jpg" alt="When It's Dark Out">
                                         </div>
                                         <div class="latest-release__song">
                                             <div class="latest-release__song__title">Drifting (Track Commentary)</div>
@@ -274,9 +275,9 @@
                                     <!-- Popular-->
                                     <div class="section-title">Popular</div>
                                     <div class="tracks">
-                                        <div class="track" data-url="musics/sail.mp3">
+                                        <div class="track" data-url="assets/musics/sail.mp3">
                                             <div class="track__art">
-                                                <img src="images/whenDarkOut.jpg" alt="When It's Dark Out">
+                                                <img src="assets/images/whenDarkOut.jpg" alt="When It's Dark Out">
                                             </div>
                                             <div class="track__number">1</div>
                                             <div class="track__added">
@@ -290,9 +291,9 @@
                                             </div>
                                             <div class="track__plays">147,544,165</div>
                                         </div>
-                                        <div class="track" data-url="musics/pompeii.mp3">
+                                        <div class="track" data-url="assets/musics/pompeii.mp3">
                                             <div class="track__art">
-                                                <img src="images/tth.jpg" alt="These Things Happen">
+                                                <img src="assets/images/tth.jpg" alt="These Things Happen">
                                             </div>
                                             <div class="track__number">2</div>
                                             <div class="track__added">
@@ -306,9 +307,9 @@
                                             </div>
                                             <div class="track__plays">74,568,782</div>
                                         </div>
-                                        <div class="track" data-url="musics/ghosts_n_stuff.mp3">
+                                        <div class="track" data-url="assets/musics/ghosts_n_stuff.mp3">
                                             <div class="track__art">
-                                                <img src="images/whenDarkOut.jpg" alt="When It's Dark Out">
+                                                <img src="assets/images/whenDarkOut.jpg" alt="When It's Dark Out">
                                             </div>
                                             <div class="track__number">3</div>
                                             <div class="track__added">
@@ -322,9 +323,9 @@
                                             </div>
                                             <div class="track__plays">13,737,506</div>
                                         </div>
-                                        <div class="track" data-url="musics/pumped_up_kicks.mp3">
+                                        <div class="track" data-url="assets/musics/pumped_up_kicks.mp3">
                                             <div class="track__art">
-                                                <img src="images/whenDarkOut.jpg" alt="When It's Dark Out">
+                                                <img src="assets/images/whenDarkOut.jpg" alt="When It's Dark Out">
                                             </div>
                                             <div class="track__number">4</div>
                                             <div class="track__added">
@@ -338,9 +339,9 @@
                                             </div>
                                             <div class="track__plays">12,234,881</div>
                                         </div>
-                                        <div class="track" data-url="musics/youre_so_creepy.mp3">
+                                        <div class="track" data-url="assets/musics/youre_so_creepy.mp3">
                                             <div class="track__art">
-                                                <img src="images/tth.jpg" alt="These Things Happen">
+                                                <img src="assets/images/tth.jpg" alt="These Things Happen">
                                             </div>
                                             <div class="track__number">5</div>
                                             <div class="track__added">
@@ -363,43 +364,43 @@
                                     <div class="related-artists">
                                         <a class="related-artist">
                                             <span class="related-artist__img">
-                                                <img src="images/hoodie.jpg" alt="Hoodie Allen">
+                                                <img src="assets/images/hoodie.jpg" alt="Hoodie Allen">
                                             </span>
                                             <span class="related-artist__name">Hoodie Allen</span>
                                         </a>
                                         <a class="related-artist">
                                             <span class="related-artist__img">
-                                                <img src="images/mikestud.jpg" alt="Mike Stud">
+                                                <img src="assets/images/mikestud.jpg" alt="Mike Stud">
                                             </span>
                                             <span class="related-artist__name">Mike Stud</span>
                                         </a>
                                         <a class="related-artist">
                                             <span class="related-artist__img">
-                                                <img src="images/drake.jpeg" alt="Drake">
+                                                <img src="assets/images/drake.jpeg" alt="Drake">
                                             </span>
                                             <span class="related-artist__name">Drake</span>
                                         </a>
                                         <a class="related-artist">
                                             <span class="related-artist__img">
-                                                <img src="images/jcole.jpg" alt="J. Cole">
+                                                <img src="assets/images/jcole.jpg" alt="J. Cole">
                                             </span>
                                             <span class="related-artist__name">J. Cole</span>
                                         </a>
                                         <a class="related-artist">
                                             <span class="related-artist__img">
-                                                <img src="images/bigsean.jpg" alt="Big Sean">
+                                                <img src="assets/images/bigsean.jpg" alt="Big Sean">
                                             </span>
                                             <span class="related-artist__name">Big Sean</span>
                                         </a>
                                         <a class="related-artist">
                                             <span class="related-artist__img">
-                                                <img src="images/wiz.jpeg" alt="Wiz Khalifa">
+                                                <img src="assets/images/wiz.jpeg" alt="Wiz Khalifa">
                                             </span>
                                             <span class="related-artist__name">Wiz Khalifa</span>
                                         </a>
                                         <a class="related-artist">
                                             <span class="related-artist__img">
-                                                <img src="images/yonas.jpg" alt="Yonas">
+                                                <img src="assets/images/yonas.jpg" alt="Yonas">
                                             </span>
                                             <span class="related-artist__name">Yonas</span>
                                         </a>
@@ -416,7 +417,7 @@
                                     <div class="album">
                                         <div class="album__info">
                                             <div class="album__info__art">
-                                                <img src="images/whenDarkOut.jpg" alt="When It's Dark Out">
+                                                <img src="assets/images/whenDarkOut.jpg" alt="When It's Dark Out">
                                             </div>
                                             <div class="album__info__meta">
                                                 <div class="album__year">2015</div>
@@ -441,7 +442,7 @@
                                                         <i class="ion-thumbsup"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">1</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -457,7 +458,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/pompeii.mp3">
+                                                <div class="track" data-url="assets/musics/pompeii.mp3">
                                                     <div class="track__number">2</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -473,7 +474,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/ghosts_n_stuff.mp3">
+                                                <div class="track" data-url="assets/musics/ghosts_n_stuff.mp3">
                                                     <div class="track__number">3</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -490,7 +491,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/pumped_up_kicks.mp3">
+                                                <div class="track" data-url="assets/musics/pumped_up_kicks.mp3">
                                                     <div class="track__number">4</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -507,7 +508,7 @@
                                                         <i class="ion-arrow-graph-down-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/youre_so_creepy.mp3">
+                                                <div class="track" data-url="assets/musics/youre_so_creepy.mp3">
                                                     <div class="track__number">5</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -525,7 +526,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/seven_nation_army.mp3">
+                                                <div class="track" data-url="assets/musics/seven_nation_army.mp3">
                                                     <div class="track__number">6</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -542,7 +543,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">7</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -559,7 +560,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">8</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -575,7 +576,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">9</div>
                                                     <div class="track__added">
                                                         <i class="ion-plus not-added"></i>
@@ -592,7 +593,7 @@
                                                         <i class="ion-arrow-graph-down-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">10</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -608,7 +609,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">11</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -625,7 +626,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">12</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -641,7 +642,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">13</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -658,7 +659,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">14</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -675,7 +676,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">15</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -692,7 +693,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">16</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -709,7 +710,7 @@
                                                         <i class="ion-arrow-graph-up-right"></i>
                                                     </div>
                                                 </div>
-                                                <div class="track" data-url="musics/sail.mp3">
+                                                <div class="track" data-url="assets/musics/sail.mp3">
                                                     <div class="track__number">17</div>
                                                     <div class="track__added">
                                                         <i class="ion-checkmark-round added"></i>
@@ -738,49 +739,49 @@
                         <div role="tabpanel" class="tab-pane" id="related-artists">
                             <div class="media-cards">
                                 <div class="media-card">
-                                    <div class="media-card__image" style="background-image: url(images/hoodie.jpg);">
+                                    <div class="media-card__image" style="background-image: url(assets/images/hoodie.jpg);">
                                         <i class="ion-ios-play"></i>
                                     </div>
                                     <a class="media-card__footer">Hoodie Allen</a>
                                 </div>
                                 <div class="media-card">
-                                    <div class="media-card__image" style="background-image: url(images/mikestud_large.jpg);">
+                                    <div class="media-card__image" style="background-image: url(assets/images/mikestud_large.jpg);">
                                         <i class="ion-ios-play"></i>
                                     </div>
                                     <a class="media-card__footer">Mike Stud</a>
                                 </div>
                                 <div class="media-card">
-                                    <div class="media-card__image" style="background-image: url(images/drake_large.jpg);">
+                                    <div class="media-card__image" style="background-image: url(assets/images/drake_large.jpg);">
                                         <i class="ion-ios-play"></i>
                                     </div>
                                     <a class="media-card__footer">Drake</a>
                                 </div>
                                 <div class="media-card">
-                                    <div class="media-card__image" style="background-image: url(images/jcole_large.jpg);">
+                                    <div class="media-card__image" style="background-image: url(assets/images/jcole_large.jpg);">
                                         <i class="ion-ios-play"></i>
                                     </div>
                                     <a class="media-card__footer">J. Cole</a>
                                 </div>
                                 <div class="media-card">
-                                    <div class="media-card__image" style="background-image: url(images/bigSean_large.jpg);">
+                                    <div class="media-card__image" style="background-image: url(assets/images/bigSean_large.jpg);">
                                         <i class="ion-ios-play"></i>
                                     </div>
                                     <a class="media-card__footer">Big Sean</a>
                                 </div>
                                 <div class="media-card">
-                                    <div class="media-card__image" style="background-image: url(images/wiz.jpeg);">
+                                    <div class="media-card__image" style="background-image: url(assets/images/wiz.jpeg);">
                                         <i class="ion-ios-play"></i>
                                     </div>
                                     <a class="media-card__footer">Wiz Khalifa</a>
                                 </div>
                                 <div class="media-card">
-                                    <div class="media-card__image" style="background-image: url(images/yonas.jpg);">
+                                    <div class="media-card__image" style="background-image: url(assets/images/yonas.jpg);">
                                         <i class="ion-ios-play"></i>
                                     </div>
                                     <a class="media-card__footer">Yonas</a>
                                 </div>
                                 <div class="media-card">
-                                    <div class="media-card__image" style="background-image: url(images/childish.jpg);">
+                                    <div class="media-card__image" style="background-image: url(assets/images/childish.jpg);">
                                         <i class="ion-ios-play"></i>
                                     </div>
                                     <a class="media-card__footer">Childish Gambino</a>
@@ -866,9 +867,10 @@
 
     <audio></audio>
 
-    <script src="vendor/scripts/jquery.min.js"></script>
-    <script src="vendor/scripts/bootstrap.min.js"></script>
-    <script src="vendor/scripts/nouislider.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <!-- <script src="assets/vendor/scripts/launchpad.min.js"></script> -->
+    <script src="assets/vendor/scripts/jquery.min.js"></script>
+    <script src="assets/vendor/scripts/bootstrap.min.js"></script>
+    <script src="assets/vendor/scripts/nouislider.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
 </body>
 </html>
