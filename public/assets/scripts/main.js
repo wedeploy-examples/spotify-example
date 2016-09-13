@@ -6,6 +6,18 @@ if (!auth.currentUser) {
   document.location.href = '/login';
 }
 
+// Logout
+
+var logout = document.querySelector('.logout');
+
+logout.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  auth.signOut().then(function() {
+    document.location.href = '/login';
+  });
+});
+
 // Sliders
 
 var volume = document.getElementById('song-volume');
