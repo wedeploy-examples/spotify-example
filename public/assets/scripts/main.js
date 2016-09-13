@@ -1,3 +1,10 @@
+// Authentication
+
+var auth = WeDeploy.auth('auth.spotify.wedeploy.me');
+
+if (!auth.currentUser) {
+  document.location.href = '/login';
+}
 
 // Sliders
 
