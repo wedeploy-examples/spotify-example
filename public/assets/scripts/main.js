@@ -1,9 +1,3 @@
-// Launchpad
-//   .url('/login')
-//   .post({
-//     email: "a@a.com",
-//     password: "a"
-//   });
 
 // Sliders
 
