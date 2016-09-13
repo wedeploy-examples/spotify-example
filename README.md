@@ -6,4 +6,5 @@ This project will demonstrate how to use the WeDeploy Auth container in a real-w
 
 ## Related
 
+* [Newsletter Demo](https://github.com/wedeploy/demo-newsletter)
 * [WhatsApp Demo](https://github.com/wedeploy/demo-whatsapp)
