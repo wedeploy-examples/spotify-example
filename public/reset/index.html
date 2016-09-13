@@ -14,10 +14,11 @@
 		</a>
 		<div class="content">
 			<h3 class="text-center">Password Reset</h3>
+			<p class="alert hidden text-center"></p>
 			<p>We'll send you an email with your username and a link to reset your password.</p>
-			<form method="post" action="http://users.spotify.wedeploy.local/reset-password-link">
+			<form>
 				<div class="form-group">
-					<input name="email" type="email" class="form-control" placeholder="Email address">
+					<input name="email" type="email" class="form-control" placeholder="Email address" required>
 				</div>
 				<div class="form-group">
 					<input type="submit" class="btn btn-sm btn-primary" value="Reset">
@@ -26,5 +27,33 @@
 			<p class="text-center">Go back to <a href="/login">Log in</a></p>
 		</div>
 	</div>
+
+	<script src="http://cdn.wedeploy.com/api/1.0.0-alpha.7/wedeploy-min.js"></script>
+	<script>
+	var auth = WeDeploy.auth('auth.spotify.wedeploy.me');
+
+	var form = document.querySelector('form');
+	var alert = document.querySelector('.alert');
+
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();
+
+		auth.sendPasswordResetEmail(form.email.value)
+			.then(function() {
+				alert.classList.add('alert-success');
+				alert.classList.remove('alert-danger', 'hidden');
+				alert.innerHTML = 'A message has been sent to you by email.';
+
+				form.reset();
+			})
+			.catch(function() {
+				alert.classList.add('alert-danger');
+				alert.classList.remove('alert-success', 'hidden');
+				alert.innerHTML = 'Some error occurred. Try again later.';
+
+				form.reset();
+			});
+	});
+	</script>
 </body>
 </html>
