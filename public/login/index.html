@@ -14,12 +14,13 @@
 		</a>
 		<div class="content">
 			<h3 class="text-center">Log in to your account</h3>
-			<form method="post" action="/login" enctype="multipart/form-data">
+			<p class="alert alert-danger hidden text-center">Some error occurred. Try again later.</p>
+			<form>
 				<div class="form-group">
-					<input name="email" type="email" class="form-control" placeholder="Email address">
+					<input name="email" type="email" class="form-control" placeholder="Email address" required>
 				</div>
 				<div class="form-group">
-					<input name="password" type="password" class="form-control" placeholder="Password">
+					<input name="password" type="password" class="form-control" placeholder="Password" required>
 				</div>
 				<div class="form-group">
 					<input type="submit" class="btn btn-sm btn-primary" value="Log in">
@@ -29,5 +30,26 @@
 			<p class="text-center">Don't have an account? <a href="/signup">Sign Up</a></p>
 		</div>
 	</div>
+
+	<script src="http://cdn.wedeploy.com/api/1.0.0-alpha.7/wedeploy-min.js"></script>
+	<script>
+	var auth = WeDeploy.auth('auth.spotify.wedeploy.me');
+
+	var form = document.querySelector('form');
+	var alert = document.querySelector('.alert');
+
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();
+
+		auth.signInWithEmailAndPassword(form.email.value, form.password.value)
+			.then(function() {
+				document.location.href = '/';
+			})
+			.catch(function() {
+				alert.classList.remove('hidden');
+				form.reset();
+			});
+	});
+	</script>
 </body>
 </html>
