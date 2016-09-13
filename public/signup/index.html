@@ -44,10 +44,11 @@
 			email: form.email.value,
 			password: form.password.value
 		})
-		.then(function(response) {
-			if (response.succeeded()) {
-				document.location.href = '/';
-			}
+		.then(function() {
+			return auth.signInWithEmailAndPassword(form.email.value, form.password.value);
+		})
+		.then(function() {
+			document.location.href = '/';
 		})
 		.catch(function() {
 			alert.classList.remove('hidden');
