@@ -1,6 +1,6 @@
 // Authentication
 
-var auth = WeDeploy.auth('auth.spotify.wedeploy.me');
+var auth = WeDeploy.auth('auth.spotify.wedeploy.io');
 
 if (!auth.currentUser) {
   document.location.href = '/login';
