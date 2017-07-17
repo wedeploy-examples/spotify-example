@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Log in - Spotify</title>
+	<title>Sign Up - Spotify</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/assets/vendor/styles/spotify.min.css">
 	<link rel="stylesheet" href="/assets/styles/auth.css">
@@ -13,7 +13,7 @@
 			<span class="navbar-logo">Spotify</span>
 		</a>
 		<div class="content">
-			<h3 class="text-center">Log in to your account</h3>
+			<h3 class="text-center">Sign up using your email</h3>
 			<p class="alert alert-danger hidden text-center">Some error occurred. Try again later.</p>
 			<form>
 				<div class="form-group">
@@ -23,17 +23,16 @@
 					<input name="password" type="password" class="form-control" placeholder="Password" required>
 				</div>
 				<div class="form-group">
-					<input type="submit" class="btn btn-sm btn-primary" value="Log in">
+					<input type="submit" class="btn btn-sm btn-primary" value="Sign Up">
 				</div>
 			</form>
-			<p class="text-center"><a href="/reset">Forgot your username or password?</a></p>
-			<p class="text-center">Don't have an account? <a href="/signup">Sign Up</a></p>
+			<p class="text-center">Already have an account? <a href="/login">Log in</a></p>
 		</div>
 	</div>
 
-	<script src="http://cdn.wedeploy.com/api/1.0.0-alpha.7/wedeploy.js"></script>
+	<script src="https://cdn.wedeploy.com/api/2.3.1/wedeploy.js"></script>
 	<script>
-	var auth = WeDeploy.auth('auth.spotify.wedeploy.io');
+	var auth = WeDeploy.auth('auth-spotify.wedeploy.io');
 
 	var form = document.querySelector('form');
 	var alert = document.querySelector('.alert');
@@ -41,14 +40,20 @@
 	form.addEventListener('submit', function(e) {
 		e.preventDefault();
 
-		auth.signInWithEmailAndPassword(form.email.value, form.password.value)
-			.then(function() {
-				document.location.href = '/';
-			})
-			.catch(function() {
-				alert.classList.remove('hidden');
-				form.reset();
-			});
+		auth.createUser({
+			email: form.email.value,
+			password: form.password.value
+		})
+		.then(function() {
+			return auth.signInWithEmailAndPassword(form.email.value, form.password.value);
+		})
+		.then(function() {
+			document.location.href = '/';
+		})
+		.catch(function() {
+			alert.classList.remove('hidden');
+			form.reset();
+		});
 	});
 	</script>
 </body>
