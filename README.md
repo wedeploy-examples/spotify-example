@@ -1,10 +1,15 @@
-# Spotify Demo [![Badge](https://img.shields.io/badge/built%20with-wedeploy-00d46a.svg?style=flat)](http://wedeploy.com)
+# Spotify [![Badge](https://img.shields.io/badge/built%20with-wedeploy-00d46a.svg?style=flat)](http://wedeploy.com)
 
-This project will demonstrate how to use the WeDeploy Auth container in a real-world application.
+A demo of [WeDeploy Hosting](https://wedeploy.com/docs/hosting), [WeDeploy Data](https://wedeploy.com/docs/data), and [WeDeploy Auth](https://wedeploy.com/docs/auth).
 
-> [Visit the documentation to learn how to start authenticating users.](http://wedeploy.com/docs/auth/)
+## Instructions
 
-## Related
+1. Install the [WeDeploy CLI](https://wedeploy.com/docs/intro/using-the-command-line/).
+2. Go to the [WeDeploy Console](https://console.wedeploy.com) and create a new project.
+3. Clone this repository and open it in a text editor.
+4. Search for all occurrences of `spotify.wedeploy.io` and replace with `yourproject.wedeploy.io`.
+5. Open the project with your command line and run `we deploy -p yourproject`.
 
-* [Newsletter Demo](https://github.com/wedeploy/demo-newsletter)
-* [WhatsApp Demo](https://github.com/wedeploy/demo-whatsapp)
+## License
+
+[BSD-3-Clause](./LICENSE.md), © Liferay, Inc.
