@@ -1,9 +1,0 @@
-[
-	{
-		"path": "/musics/*",
-		"data": true,
-		"auth": {
-			"validator": "$auth != null"
-		}
-	}
-]
