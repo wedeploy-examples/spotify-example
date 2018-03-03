@@ -1,6 +1,6 @@
 # Spotify [![Badge](https://img.shields.io/badge/built%20with-wedeploy-00d46a.svg?style=flat)](http://wedeploy.com)
 
-A demo of [WeDeploy Hosting](https://wedeploy.com/docs/hosting) and [WeDeploy Auth](https://wedeploy.com/docs/auth).
+An example of [WeDeploy Hosting](https://wedeploy.com/docs/hosting) and [WeDeploy Auth](https://wedeploy.com/docs/auth).
 
 ## Instructions
 
