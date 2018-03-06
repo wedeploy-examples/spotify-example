@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Reset Password - Spotify</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/assets/vendor/styles/spotify.min.css">
-	<link rel="stylesheet" href="/assets/styles/auth.css">
+  <meta charset="UTF-8">
+  <title>Reset Password - Spotify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/vendor/styles/spotify.min.css">
+  <link rel="stylesheet" href="/assets/styles/auth.css">
 </head>
 <body>
-	<div class="container">
-		<a class="navbar-brand" href="/">
-			<span class="navbar-logo">Spotify</span>
-		</a>
-		<div class="content">
-			<h3 class="text-center">Password Reset</h3>
-			<p class="alert hidden text-center"></p>
-			<p>We'll send you an email with your username and a link to reset your password.</p>
-			<form>
-				<div class="form-group">
-					<input name="email" type="email" class="form-control" placeholder="Email address" required>
-				</div>
-				<div class="form-group">
-					<input type="submit" class="btn btn-sm btn-primary" value="Reset">
-				</div>
-			</form>
-			<p class="text-center">Go back to <a href="/login">Log in</a></p>
-		</div>
-	</div>
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <span class="navbar-logo">Spotify</span>
+    </a>
+    <div class="content">
+      <h3 class="text-center">Password Reset</h3>
+      <p class="alert hidden text-center"></p>
+      <p>We'll send you an email with your username and a link to reset your password.</p>
+      <form>
+        <div class="form-group">
+          <input name="email" type="email" class="form-control" placeholder="Email address" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-sm btn-primary" value="Reset">
+        </div>
+      </form>
+      <p class="text-center">Go back to <a href="/login">Log in</a></p>
+    </div>
+  </div>
 
-	<script src="https://cdn.wedeploy.com/api/4.1.0/wedeploy.js"></script>
-	<script>
-	var auth = WeDeploy.auth('auth-spotify.wedeploy.io');
+  <script src="https://cdn.wedeploy.com/api/4.1.0/wedeploy.js"></script>
+  <script>
+  var auth = WeDeploy.auth('auth-spotify.wedeploy.io');
 
-	var form = document.querySelector('form');
-	var alert = document.querySelector('.alert');
+  var form = document.querySelector('form');
+  var alert = document.querySelector('.alert');
 
-	form.addEventListener('submit', function(e) {
-		e.preventDefault();
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-		auth.sendPasswordResetEmail(form.email.value)
-			.then(function() {
-				alert.classList.add('alert-success');
-				alert.classList.remove('alert-danger', 'hidden');
-				alert.innerHTML = 'A message has been sent to you by email.';
+    auth.sendPasswordResetEmail(form.email.value)
+      .then(function() {
+        alert.classList.add('alert-success');
+        alert.classList.remove('alert-danger', 'hidden');
+        alert.innerHTML = 'A message has been sent to you by email.';
 
-				form.reset();
-			})
-			.catch(function() {
-				alert.classList.add('alert-danger');
-				alert.classList.remove('alert-success', 'hidden');
-				alert.innerHTML = 'Some error occurred. Try again later.';
+        form.reset();
+      })
+      .catch(function() {
+        alert.classList.add('alert-danger');
+        alert.classList.remove('alert-success', 'hidden');
+        alert.innerHTML = 'Some error occurred. Try again later.';
 
-				form.reset();
-			});
-	});
-	</script>
+        form.reset();
+      });
+  });
+  </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
 {
-	"id": "auth",
+  "id": "auth",
   "image": "wedeploy/auth:2.0.0"
 }
